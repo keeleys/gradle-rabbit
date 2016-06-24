@@ -1,0 +1,44 @@
+group 'com.ttianjun.study'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.5.RELEASE")
+    }
+}
+
+allprojects {
+    apply plugin: 'base'
+}
+subprojects { subproject ->
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    apply plugin: 'maven'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {url "http://maven.oschina.net/content/groups/public/"}
+        maven {url "http://repos.someok.com/release"}
+    }
+
+    dependencies {
+        // tag::jetty[]
+        compile("org.springframework.boot:spring-boot-starter-web")
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+

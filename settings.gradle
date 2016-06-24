@@ -1,0 +1,3 @@
+rootProject.name = 'rabbit-gradle'
+include 'gralde-provider'
+
