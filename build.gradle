@@ -28,13 +28,10 @@ subprojects { subproject ->
     repositories {
         mavenLocal()
         mavenCentral()
-        maven {url "http://maven.oschina.net/content/groups/public/"}
-        maven {url "http://repos.someok.com/release"}
     }
 
     dependencies {
-        // tag::jetty[]
-        compile("org.springframework.boot:spring-boot-starter-web")
+        compile("org.springframework.boot:spring-boot-starter-amqp")
     }
 }
 

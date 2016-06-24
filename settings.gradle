@@ -1,3 +1,4 @@
 rootProject.name = 'rabbit-gradle'
-include 'gralde-provider'
+include 'gradle-provider'
+include 'gradle-consumer'
 
